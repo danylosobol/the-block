@@ -74,20 +74,18 @@ const config: runtime.GetPrismaClientConfig = {
   engineVersion: "f676762280b54cd07c770017ed3711ddde35f37a",
   datasourceNames: ["db"],
   activeProvider: "postgresql",
-  postinstall: false,
   inlineDatasources: {
     db: {
       url: {
         fromEnvVar: null,
-        value:
-          "postgres://avnadmin:AVNS_pDZRqKLPXNEMf7CbnR_@nuxt-db-danilsobolub16b-652c.d.aivencloud.com:16775/defaultdb?sslmode=require",
+        value: "postgresql://root:root@localhost:5432/nuxt_db",
       },
     },
   },
   inlineSchema:
-    '// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider      = "prisma-client"\n  output        = "../src/generated/prisma"\n  binaryTargets = ["native", "rhel-openssl-3.0.x"]\n}\n\ndatasource db {\n  provider = "postgresql"\n  url      = "postgres://avnadmin:AVNS_pDZRqKLPXNEMf7CbnR_@nuxt-db-danilsobolub16b-652c.d.aivencloud.com:16775/defaultdb?sslmode=require"\n}\n\nmodel User {\n  id           Int          @id @default(autoincrement())\n  email        String       @unique\n  name         String\n  passwordHash String\n  created_at   DateTime     @default(now())\n  posts        Post[]\n  resetTokens  ResetToken[]\n}\n\nmodel File {\n  id         String   @id\n  url        String\n  filename   String\n  mimetype   String\n  size       Int\n  uploadedAt DateTime @default(now())\n  posts      Post[]   @relation("FeaturedImage")\n}\n\nmodel Post {\n  id              Int      @id @default(autoincrement())\n  title           String\n  content         String?\n  published       Boolean  @default(false)\n  author          User     @relation(fields: [authorId], references: [id])\n  created_at      DateTime @default(now())\n  authorId        Int\n  tags            Tag[]    @relation("PostTags")\n  featuredImage   File?    @relation("FeaturedImage", fields: [featuredImageId], references: [id])\n  featuredImageId String?\n}\n\nmodel Tag {\n  id    Int    @id @default(autoincrement())\n  name  String\n  slug  String @unique\n  posts Post[] @relation("PostTags")\n}\n\nmodel ResetToken {\n  id        Int      @id @default(autoincrement())\n  token     String   @unique\n  userId    Int      @unique\n  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)\n  expiresAt DateTime\n\n  @@index([userId])\n}\n',
+    '// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider      = "prisma-client"\n  output        = "../src/generated/prisma"\n  binaryTargets = ["native", "rhel-openssl-3.0.x"]\n}\n\ndatasource db {\n  provider = "postgresql"\n  url      = "postgresql://root:root@localhost:5432/nuxt_db"\n}\n\nmodel User {\n  id           Int          @id @default(autoincrement())\n  email        String       @unique\n  name         String\n  passwordHash String\n  created_at   DateTime     @default(now())\n  posts        Post[]\n  resetTokens  ResetToken[]\n}\n\nmodel File {\n  id         String   @id\n  url        String\n  filename   String\n  mimetype   String\n  size       Int\n  uploadedAt DateTime @default(now())\n  posts      Post[]   @relation("FeaturedImage")\n}\n\nmodel Post {\n  id              Int      @id @default(autoincrement())\n  title           String\n  content         String?\n  published       Boolean  @default(false)\n  author          User     @relation(fields: [authorId], references: [id])\n  created_at      DateTime @default(now())\n  authorId        Int\n  tags            Tag[]    @relation("PostTags")\n  featuredImage   File?    @relation("FeaturedImage", fields: [featuredImageId], references: [id])\n  featuredImageId String?\n}\n\nmodel Tag {\n  id    Int    @id @default(autoincrement())\n  name  String\n  slug  String @unique\n  posts Post[] @relation("PostTags")\n}\n\nmodel ResetToken {\n  id        Int      @id @default(autoincrement())\n  token     String   @unique\n  userId    Int      @unique\n  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)\n  expiresAt DateTime\n\n  @@index([userId])\n}\n',
   inlineSchemaHash:
-    "95293a970d1564266968faccf39d6c58f864d44d5467294725bc8a01f567d65e",
+    "d569dbf2b019c5f8b648f28f552f3b536b4456bd5a396b4a9703292df68dd465",
   copyEngine: true,
   runtimeDataModel: {
     models: {},

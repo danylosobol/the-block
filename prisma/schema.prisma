@@ -9,7 +9,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgres://avnadmin:AVNS_pDZRqKLPXNEMf7CbnR_@nuxt-db-danilsobolub16b-652c.d.aivencloud.com:16775/defaultdb?sslmode=require"
+  url      = "postgresql://root:root@localhost:5432/nuxt_db"
 }
 
 model User {
