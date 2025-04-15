@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client"
+  output        = "../src/generated/prisma"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://avnadmin:AVNS_pDZRqKLPXNEMf7CbnR_@nuxt-db-danilsobolub16b-652c.d.aivencloud.com:16775/defaultdb?sslmode=require"
+}
+
+model User {
+  id           Int          @id @default(autoincrement())
+  email        String       @unique
+  name         String
+  passwordHash String
+  created_at   DateTime     @default(now())
+  posts        Post[]
+  resetTokens  ResetToken[]
+}
+
+model File {
+  id         String   @id
+  url        String
+  filename   String
+  mimetype   String
+  size       Int
+  uploadedAt DateTime @default(now())
+  posts      Post[]   @relation("FeaturedImage")
+}
+
+model Post {
+  id              Int      @id @default(autoincrement())
+  title           String
+  content         String?
+  published       Boolean  @default(false)
+  author          User     @relation(fields: [authorId], references: [id])
+  created_at      DateTime @default(now())
+  authorId        Int
+  tags            Tag[]    @relation("PostTags")
+  featuredImage   File?    @relation("FeaturedImage", fields: [featuredImageId], references: [id])
+  featuredImageId String?
+}
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String
+  slug  String @unique
+  posts Post[] @relation("PostTags")
+}
+
+model ResetToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  userId    Int      @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+
+  @@index([userId])
+}

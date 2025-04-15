@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "~/assets/css/fonts.css";
+@theme {
+  --font-sans: "Inter";
+  --color-base-dark: #202020;
+  --color-base-light: #f9f8f8;
+  --color-base-red: #b3001b;
+  --color-base-green: #0a8754;
+  --color-base-blue: #235789;
+}
+
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+.app-fade-enter-active,
+.app-fade-leave-active {
+  transition: opacity var(--default-transition-duration)
+    var(--default-transition-timing-function);
+}
+
+.app-fade-enter-from,
+.app-fade-leave-to {
+  opacity: 0;
+}
+
+.app-wysiwyg .tox .tox-toolbar__primary,
+.app-wysiwyg .tox:not(.tox-tinymce-inline) .tox-editor-header,
+.app-wysiwyg .tox .tox-tbtn,
+.app-wysiwyg .tox .tox-edit-area__iframe,
+.app-wysiwyg .tox .tox-statusbar {
+  @apply bg-base-light;
+}
+
+.app-wysiwyg .tox-tinymce {
+  @apply border-1;
+}
+
+.app-wysiwyg .tox .tox-statusbar,
+.app-wysiwyg .tox-tinymce {
+  @apply border-base-dark;
+}
+
+.app-wysiwyg .tox-tinymce {
+  @apply rounded-sm;
+}
+
+.app-wysiwyg .tox:not(.tox-tinymce-inline) .tox-editor-header {
+  @apply shadow-sm;
+}
+
+.app-wysiwyg .tox .tox-statusbar__path-item {
+  @apply text-base-dark;
+}
+
+.app-wysiwyg .tox .tox-edit-area::before {
+  @apply border-base-dark;
+}
+
+.app-wysiwyg .tox .tox-tbtn svg,
+.app-wysiwyg .tox-toolbar__primary {
+  @apply fill-base-dark;
+}
