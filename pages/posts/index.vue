@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Prisma } from "@prisma/client";
+import type { Prisma } from "~/src/generated/prisma";
 import type { Reactive } from "vue";
 import type {
   IAppTableColumn,
@@ -7,7 +7,9 @@ import type {
   IQueryParams,
   ISafePost,
 } from "~/types/interfaces";
-
+useSeoMeta({
+  title: "My posts - The block.",
+});
 definePageMeta({
   requiresAuth: true,
 });

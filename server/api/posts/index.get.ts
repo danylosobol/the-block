@@ -1,6 +1,6 @@
 import { postService } from "~/server/services/post";
 import { IGetAllResponse, IQueryParams, ISafePost } from "~/types/interfaces";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "~/src/generated/prisma";
 
 export default defineEventHandler(async (event) => {
   const { search, page, size, args }: IQueryParams<string | undefined> =

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { ISafePost } from "~/types/interfaces";
-
+useSeoMeta({
+  title: "Update post - The block.",
+});
 definePageMeta({
   middleware: ["post"],
   requiresAuth: true,

@@ -11,8 +11,6 @@ export function useAuth() {
       maxAge: maxAge,
       sameSite: "lax",
       path: "/",
-      domain:
-        process.env.NODE_ENV === "production" ? ".example.com" : undefined,
     });
   };
 

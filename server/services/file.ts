@@ -1,4 +1,4 @@
-import { File, Prisma } from "@prisma/client";
+import { File, Prisma } from "~/src/generated/prisma";
 import prisma from "~/lib/prisma";
 
 interface IFileService {

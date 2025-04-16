@@ -1,4 +1,4 @@
-import { type User } from "@prisma/client";
+import { type User } from "~/src/generated/prisma";
 import { type ISafeUser } from "~/types/interfaces";
 import sanitizeHtml from "sanitize-html";
 

@@ -170,9 +170,22 @@ onClickOutside(target, (event) => {
 
         <div
           :class="{ 'rotate-180': isOpened }"
-          class="absolute top-[50%] -translate-y-[50%] right-[5px] transition-transform"
+          class="absolute top-[50%] -translate-y-[50%] right-[5px] transition-transform pointer-events-none select-none w-[24px] h-[24px]"
         >
-          &#11206;
+          <svg
+            class="w-full h-full"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M6 9L12 15L18 9"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
       </div>
       <div

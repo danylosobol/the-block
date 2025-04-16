@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { IRecoveryInput } from "~/types/interfaces";
-
+useSeoMeta({
+  title: "Recorevy password - The block.",
+  description:
+    "Reset your password in just a few steps and get back to your account.",
+});
 const route = useRoute();
 const appStore = useAppStore();
 const { data, error, loading, sendRequest } = useApi();

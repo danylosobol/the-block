@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components";
-import type { Tag } from "@prisma/client";
+import type { Tag } from "~/src/generated/prisma";
 
 interface IAppTaxesProps {
   taxes: Tag[];

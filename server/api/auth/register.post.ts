@@ -1,7 +1,7 @@
 import { IApiError, IRegisterInput } from "~/types/interfaces";
 import { authService } from "~/server/services/auth";
 import validator from "validator";
-import { transformer } from "~/utils/transformer";
+import { transformer } from "~/server/utils/transformer";
 
 export default defineEventHandler(async (event) => {
   const data: IRegisterInput = await readBody(event);

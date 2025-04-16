@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { File, Tag } from "@prisma/client";
+import type { File, Tag } from "~/src/generated/prisma";
 import type { IPostTaxes } from "~/types/interfaces";
 
 interface IAppPostFormSidebarProps {

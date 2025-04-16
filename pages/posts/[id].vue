@@ -8,6 +8,16 @@ definePageMeta({
 const route = useRoute();
 const { getById } = useCrud<ISafePost>("/api/posts");
 const { data } = await getById(Number(route.params.id));
+
+useSeoMeta({
+  title: `${data.value?.title ?? "Single post"} - The block.`,
+  description: `${(data.value?.content ?? "Single post")
+    .replace(/<[^>]+>/g, "")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 15)
+    .join(" ")} - The block.`,
+});
 </script>
 <template>
   <section class="bg-base-dark py-2 text-base-light">
@@ -31,3 +41,11 @@ const { data } = await getById(Number(route.params.id));
     </AppContainer>
   </section>
 </template>
+
+<style scoped lang="scss">
+.content {
+  & > * {
+    margin-bottom: 10px;
+  }
+}
+</style>

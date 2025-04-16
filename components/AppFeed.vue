@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Prisma, Tag } from "@prisma/client";
+import type { Prisma, Tag } from "~/src/generated/prisma";
 import type { IApiError, IQueryParams, ISafePost } from "~/types/interfaces";
 
 interface IAppFeed {
@@ -84,10 +84,10 @@ watch(
           v-for="post in postRequestData.data"
         ></AppPostItem>
       </template>
-      <p v-else class="text-center">No posts founded</p>
+      <p v-else class="text-center mb-3 px-1.5">No posts founded</p>
     </div>
     <div
-      v-if="tagRequestData?.data"
+      v-if="tagRequestData?.data && tagRequestData.data.length > 0"
       class="w-full mb-3 md:w-1/4 md:pl-3 md:mb-0"
     >
       <p>Popular tags</p>

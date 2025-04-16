@@ -1,4 +1,4 @@
-import { Prisma, User } from "@prisma/client";
+import { Prisma, User } from "~/src/generated/prisma";
 import prisma from "~/lib/prisma";
 
 interface IUserService {

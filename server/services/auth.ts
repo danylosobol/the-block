@@ -8,7 +8,7 @@ import {
 import jwt from "jsonwebtoken";
 import { userService } from "~/server/services/user";
 import bcrypt from "bcryptjs";
-import { User } from "@prisma/client";
+import { User } from "~/src/generated/prisma";
 import { resetTokenService } from "~/server/services/resetToken";
 import crypto from "crypto";
 

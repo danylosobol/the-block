@@ -1,4 +1,4 @@
-import { Prisma, Tag } from "@prisma/client";
+import { Prisma, Tag } from "~/src/generated/prisma";
 import prisma from "~/lib/prisma";
 
 import { IGetAllResponse } from "~/types/interfaces";

@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import { Prisma } from "~/src/generated/prisma";
 import prisma from "~/lib/prisma";
 
 import {
@@ -7,7 +7,7 @@ import {
   IPostUpdateInput,
   ISafePost,
 } from "~/types/interfaces";
-import { transformer } from "~/utils/transformer";
+import { transformer } from "~/server/utils/transformer";
 
 interface IPostService {
   findById(id: number): Promise<ISafePost | null>;

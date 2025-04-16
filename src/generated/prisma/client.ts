@@ -74,6 +74,7 @@ const config: runtime.GetPrismaClientConfig = {
   engineVersion: "f676762280b54cd07c770017ed3711ddde35f37a",
   datasourceNames: ["db"],
   activeProvider: "postgresql",
+  postinstall: false,
   inlineDatasources: {
     db: {
       url: {

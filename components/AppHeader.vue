@@ -96,7 +96,7 @@ const logout = async (): Promise<void> => {
                     : currentUser.email.charAt(0)
                 }}
               </div>
-              <div class="w-full">
+              <div class="w-full hidden lg:block">
                 <p
                   class="whitespace-nowrap text-ellipsis overflow-hidden"
                   v-if="currentUser.name"
@@ -113,7 +113,7 @@ const logout = async (): Promise<void> => {
               <NuxtLink
                 @click="toggleSidebar"
                 to="/profile/update"
-                class="absolute lg:top-[50%] lg:translate-y-[-50%] right-0 lg:opacity-0 group-hover:opacity-[100%] transition-opacity"
+                class="absolute top-[50%] translate-y-[-50%] right-0 lg:opacity-0 group-hover:opacity-[100%] transition-opacity"
                 >Edit</NuxtLink
               >
             </div>

@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import { Prisma } from "~/src/generated/prisma";
 import validator from "validator";
 import { tagService } from "~/server/services/tag";
 

@@ -1,4 +1,4 @@
-import type { File, Prisma, User } from "@prisma/client";
+import type { File, Prisma, User } from "~/src/generated/prisma";
 import type { TAppMessageType } from "~/types/types";
 
 export interface IModelValueProp<T> {

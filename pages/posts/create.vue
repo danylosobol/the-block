@@ -1,4 +1,7 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "New post - The block.",
+});
 definePageMeta({
   requiresAuth: true,
 });

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { File } from "@prisma/client";
+import type { File } from "~/src/generated/prisma";
 import type { IModelValueEmit, IModelValueProp } from "~/types/interfaces";
 
 interface IAppPostFormFeaturedImageProps extends IModelValueProp<File | null> {}

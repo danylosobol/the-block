@@ -17,4 +17,10 @@ const computedHeight = computed<number>(() =>
   >
     <NuxtPage />
   </main>
+  <footer class="bg-base-light flex justify-center py-3">
+    <p>
+      Developer:
+      <NuxtLink href="mailto:danilsobolub16b@gmail.com">Danylo Sobol</NuxtLink>
+    </p>
+  </footer>
 </template>

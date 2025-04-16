@@ -1,10 +1,10 @@
-import { Prisma } from "@prisma/client";
+import { Prisma } from "~/src/generated/prisma";
 import validator from "validator";
 import { authService } from "~/server/services/auth";
 import { userService } from "~/server/services/user";
 import authMiddleware from "~/server/utils/auth";
 import { IProfileUpdate } from "~/types/interfaces";
-import { transformer } from "~/utils/transformer";
+import { transformer } from "~/server/utils/transformer";
 
 export default defineEventHandler(async (event) => {
   await authMiddleware(event);

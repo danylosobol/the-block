@@ -1,4 +1,4 @@
-import { Prisma, ResetToken } from "@prisma/client";
+import { Prisma, ResetToken } from "~/src/generated/prisma";
 import prisma from "~/lib/prisma";
 
 interface IResetTokenService {

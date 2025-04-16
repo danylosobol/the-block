@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { IRegisterInput, ISafeUser } from "~/types/interfaces";
-
+useSeoMeta({
+  title: "Register - The block.",
+  description:
+    "Sign up in seconds and start exploring. It’s fast, easy, and free!",
+});
 const { data, loading, error, sendRequest } = useApi<ISafeUser | null>();
 const appStore = useAppStore();
 const formData: IRegisterInput = reactive({

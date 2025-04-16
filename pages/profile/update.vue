@@ -4,6 +4,9 @@ import AppButton from "~/components/AppButton.vue";
 import AppPopup from "~/components/AppPopup.vue";
 import type { IProfileUpdate, ISafeUser } from "~/types/interfaces";
 
+useSeoMeta({
+  title: "Your profile - The block.",
+});
 definePageMeta({
   requiresAuth: true,
 });

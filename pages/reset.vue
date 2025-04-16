@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { IResetInput } from "~/types/interfaces";
-
+useSeoMeta({
+  title: "Reset password - The block.",
+  description:
+    "Set a new password and get back to using your account — safe and simple.",
+});
 const { data, error, loading, sendRequest } = useApi();
 const appStore = useAppStore();
 const url = useRequestURL();

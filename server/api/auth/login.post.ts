@@ -2,7 +2,7 @@ import { useAuth } from "~/composables/useAuth";
 import { authService } from "~/server/services/auth";
 import validator from "validator";
 import { IApiError, ILoginInput, ILoginResponse } from "~/types/interfaces";
-import { transformer } from "~/utils/transformer";
+import { transformer } from "~/server/utils/transformer";
 
 export default defineEventHandler(async (event) => {
   const data: ILoginInput = await readBody(event);

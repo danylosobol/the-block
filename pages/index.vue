@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "Home - The block.",
+  description: "Your favourite blog site",
+});
 const userStore = useUserStore();
 const currentUserId = computed(() => userStore.getCurrentUser?.id);
 </script>
@@ -17,7 +21,7 @@ const currentUserId = computed(() => userStore.getCurrentUser?.id);
       </div>
     </AppContainer>
   </section>
-  <section class="bg-base-light p-5">
+  <section class="bg-base-light py-5">
     <AppContainer>
       <h2 class="text-2xl text-center mb-5">Feed</h2>
       <AppFeed :author-id="currentUserId"></AppFeed>

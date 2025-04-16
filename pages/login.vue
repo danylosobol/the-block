@@ -4,6 +4,10 @@ interface ILoginResponse {
   token: string;
   user: ISafeUser;
 }
+useSeoMeta({
+  title: "Login - The block.",
+  description: "Sign in to your account and pick up where you left off.",
+});
 const formData: ILoginInput = reactive({
   email: "",
   password: "",

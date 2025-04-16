@@ -1,6 +1,6 @@
 import authMiddleware from "~/server/utils/auth";
-import { User } from "@prisma/client";
-import { transformer } from "~/utils/transformer";
+import { User } from "~/src/generated/prisma";
+import { transformer } from "~/server/utils/transformer";
 import prisma from "~/lib/prisma";
 export default defineEventHandler(async (event) => {
   await authMiddleware(event);

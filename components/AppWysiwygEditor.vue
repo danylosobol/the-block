@@ -34,10 +34,16 @@ const editorValue = computed({
         :init="{
           height: 600,
           menubar: false,
-          plugins: [],
+          plugins: ['paste'],
           branding: false,
           content_css: font,
           content_style: 'body{font-family: Inter}',
+          paste_text_sticky: true,
+          paste_text_sticky_default: true,
+          paste_remove_spans: true,
+          paste_remove_styles: true,
+          paste_retain_style_properties: false,
+          keep_styles: false,
           resize: false,
           toolbar:
             'undo redo | blocks | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
